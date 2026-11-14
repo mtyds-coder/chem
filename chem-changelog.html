@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>化学实验室更新日志</title>
+<style>
+  :root{color-scheme:light;--bg:#f2f5fa;--card:#fff;--text:#1c2738;--sub:#68778d;--blue:#1769e0;--line:#e3e9f2}
+  *{box-sizing:border-box}
+  body{margin:0;padding:28px 16px 48px;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+  main{max-width:880px;margin:0 auto}
+  header{padding:26px 28px;border-radius:18px;background:linear-gradient(140deg,#18a999,#087f8c);color:#fff;box-shadow:0 8px 24px #087f8c24}
+  h1{margin:0;font-size:25px}
+  header p{margin:9px 0 0;color:#e7fffb;font-size:14px;line-height:1.7}
+  .timeline{position:relative;margin:24px 0 0;padding-left:25px}
+  .timeline:before{content:"";position:absolute;top:10px;bottom:10px;left:7px;width:2px;background:#d6e2f2}
+  article{position:relative;margin:0 0 14px;padding:18px 20px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 2px 8px #1c27380a}
+  article:before{content:"";position:absolute;left:-24px;top:23px;width:10px;height:10px;border:3px solid var(--bg);border-radius:50%;background:#0f9f91}
+  .version{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:8px}
+  h2{margin:0;font-size:17px}
+  .badge{padding:3px 8px;border-radius:20px;background:#e5f8f4;color:#087f70;font-size:11px;font-weight:600}
+  ul{margin:0;padding-left:20px;color:#35445b;font-size:14px;line-height:1.75}
+  li+li{margin-top:3px}
+  .file{display:inline-block;margin-top:10px;color:var(--blue);font-size:12px;text-decoration:none;overflow-wrap:anywhere}
+  .file:hover{text-decoration:underline}
+  .note{margin-top:20px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--sub);font-size:12px;line-height:1.7}
+  @media(max-width:560px){body{padding:16px 12px 30px}header{padding:22px 20px}h1{font-size:21px}article{padding:16px}}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>化学实验室更新日志</h1>
+    <p>记录化学实验室模拟器的版本与主要功能。当前主版本为 v0.2.0。</p>
+  </header>
+
+  <section class="timeline" aria-label="版本更新记录">
+    <article>
+      <div class="version"><h2>v0.2.0</h2><span class="badge">最新版</span></div>
+      <ul>
+        <li>选中台面上的器材后，可打开“器材详情”面板，查看器材类型、标签、温度和容器内物质等信息。</li>
+        <li>详情面板会随器材选择、加试剂和温度变化更新，并可随时关闭。</li>
+        <li>新增“铁粉”试剂（排在锌粒之后）：Fe + 2HCl、Fe + CuSO₄ 两条反应此前只有反应数据、界面上无试剂可取，现可正常触发并显示浅绿色溶液、析出铜等现象。</li>
+        <li>修复台面容器的标签：烧杯 / 锥形瓶 / 试管现在各自显示名称，此前因内部名称表键名与器材标识不一致，一律显示为“容器”。</li>
+        <li>修复实验日志右上角的计时：改为按真实时间累计，此前按动画帧计数，在 60Hz 屏幕上走快约一倍。</li>
+        <li>修复固体试剂（锌粒、铁粉、大理石）投入空容器时悬在半空的问题：不再凭空抬升液面，固体改为堆积在容器底部，并修复容器内有固体时外壁描边丢失的问题。</li>
+        <li>试剂拖到容器外不再静默消失：现在会弹出提示并在日志中记录一条警告。</li>
+      </ul>
+      <a class="file" href="./chem-v0.2.0.html">打开 化学实验室v0.2.0.html</a>
+    </article>
+
+    <article>
+      <div class="version"><h2>v0.1.5</h2></div>
+      <ul>
+        <li>新增碳酸钠溶液、硝酸银溶液、氯化钡溶液和淀粉溶液。</li>
+        <li>新增碳酸钠与稀盐酸反应，显示二氧化碳气泡。</li>
+        <li>新增硝酸银与稀盐酸、氯化钡与硫酸铜的沉淀反应，显示白色沉淀。</li>
+        <li>新增淀粉溶液与碘液的显色反应，溶液变为蓝黑色。</li>
+      </ul>
+      <a class="file" href="./chem-v0.1.5.html">打开 化学实验室v0.1.5.html</a>
+    </article>
+
+    <article>
+      <div class="version"><h2>v0.1.4</h2></div>
+      <ul>
+        <li>统一稀盐酸和硫酸铜试剂的内部标识，使其名称、图标、颜色和反应数据对应一致。</li>
+        <li>修复加入稀盐酸或硫酸铜后操作日志显示“undefined”的问题，并恢复相关模拟反应识别。</li>
+      </ul>
+      <a class="file" href="./chem-v0.1.4.html">打开 化学实验室v0.1.4.html</a>
+    </article>
+
+    <article>
+      <div class="version"><h2>v0.1.3</h2></div>
+      <ul>
+        <li>修正试管底部的绘制路径，避免拖动试管时因圆弧半径错误导致画布报错。</li>
+        <li>从左侧素材栏开始拖动时，先将素材放在台面边界内，并以素材中心跟随鼠标，修复初始位置偏差。</li>
+      </ul>
+      <a class="file" href="./chem-v0.1.3.html">打开 化学实验室v0.1.3.html</a>
+    </article>
+
+    <article>
+      <div class="version"><h2>v0.1.2</h2></div>
+      <ul>
+        <li>修复使用电脑拖动左侧器材或试剂时浏览器会选中文字的问题。</li>
+        <li>将拖动过程的鼠标和触摸移动监听扩展到整个窗口；从左侧素材栏按下后即可连续拖入实验台，不必先移到空白处重新触发。</li>
+        <li>修正画布逻辑坐标与实际显示尺寸的缩放关系；台面内拖动、鼠标位置和器材绘制现保持一致，不再出现素材跟手偏移。</li>
+        <li>改进器材命中检测，使烧杯、锥形瓶和试管的交互区域更贴合各自外形，减少透明区域造成的误选。</li>
+        <li>修复拖放试剂时临时拖拽对象遮挡目标容器的问题，确保试剂能正确加入目标容器。</li>
+        <li>修复容器绘制中的温度刻度变量初始化顺序，避免摆放器材后绘制报错。</li>
+      </ul>
+      <a class="file" href="./chem-v0.1.2.html">打开 化学实验室v0.1.2.html</a>
+    </article>
+
+    <article>
+      <div class="version"><h2>v0.1.1</h2></div>
+      <ul>
+        <li>提供可拖拽的烧杯、锥形瓶、试管和本生灯，并支持将器材移动、摆放在实验台上。</li>
+        <li>支持向容器加入蒸馏水、稀盐酸、氢氧化钠、硫酸铜、锌粒、大理石和碘等试剂。</li>
+        <li>加入锌/铁与稀盐酸、铁/锌与硫酸铜、氢氧化钠与硫酸铜、大理石与稀盐酸及酸碱中和等模拟反应，并显示现象、气泡和反应方程式。</li>
+        <li>新增点火、降温、温度调节和温度计显示；可观察容器受热、沸腾及蒸汽效果。</li>
+        <li>提供实验日志、气体生成提示、安全须知和清空台面功能，并适配窄屏布局。</li>
+      </ul>
+      <a class="file" href="./chem-v0.1.1.html">打开 化学实验室v0.1.1.html</a>
+    </article>
+  </section>
+
+  <div class="note">
+    说明：本日志根据当前目录中实际存在的版本文件及其可见功能整理，不推测未提供的早期版本改动。后续如新增化学实验室版本，将在此处补充对应版本条目。
+  </div>
+</main>
+</body>
+</html>
